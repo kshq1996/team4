@@ -21,8 +21,10 @@
 <![endif]-->
 <link href="admin/static/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="admin/static/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
-<link href="admin/static/h-ui.admin/cs/style.css" rel="stylesheet" type="text/css" />
+<link href="admin/static/h-ui.admin/css/style.css" rel="stylesheet" type="text/css" />
 <link href="admin/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="admin/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="admin/static/h-ui/js/H-ui.min.js"></script>
 <!--[if IE 6]>
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -40,30 +42,29 @@
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
         <div class="formControls col-xs-8">
-          <input id="" name="" type="text" placeholder="账户" class="input-text size-L">
+          <input id="" name="username" type="text" placeholder="账户" class="input-text size-L" >
         </div>
       </div>
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
         <div class="formControls col-xs-8">
-          <input id="" name="" type="password" placeholder="密码" class="input-text size-L">
+          <input id="" name="password" type="password" placeholder="密码" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <input class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
-          <img src=""> <a id="kanbuq" href="javascript:;">看不清，换一张</a> </div>
+          <input class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;" onkeyup="javascript:ajaxCode(this.value)">
+          <img src="CodeServlet" onclick="this.src='CodeServlet?rnd=' + Math.random();" style="width: 100px; height: 40px">
+          <br/><span id="codeResult"></span>
+          </div>
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <label for="online">
-            <input type="checkbox" name="online" id="online" value="">
-            使我保持登录状态</label>
         </div>
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <input name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+          <input id="submitButton" name="" style="background-color:grey" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;" disabled="true">
           <input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
         </div>
       </div>
@@ -71,5 +72,28 @@
   </div>
 </div>
 <div class="footer">AMUZ 后台管理系统</div>
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript">
+
+	function ajaxCode(code){
+		 $.ajax({
+             type:"POST",
+             url:'admin/UserAction_ajaxCode',
+         	 data:'code='+code,
+             success:function(data){
+            	
+                 if(data=="success"){
+                	 document.getElementById('codeResult').innerHTML="<b style='color:green'>验证码正确</b>"
+                 	 document.getElementById('submitButton').disabled="";
+                	 document.getElementById('submitButton').style="background-color:green";
+                	 
+                 }else{
+                	 document.getElementById('codeResult').innerHTML="<b style='color:red'>验证码错误</b>"
+                 	document.getElementById('submitButton').disable="true";
+                	 document.getElementById('submitButton').style="background-color:grey";
+                 }
+                
+             }
+         });
+	}
+</script>
+

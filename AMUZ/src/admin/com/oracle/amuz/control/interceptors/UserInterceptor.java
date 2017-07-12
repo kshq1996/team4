@@ -23,11 +23,12 @@ public class UserInterceptor extends AbstractInterceptor {
 		System.out.println(url);
 		System.out.println(actionname);
 		System.out.println(methodname);
-		if(actionname.equals("UserActio`n")&&methodname.equalsIgnoreCase("login")){
+		if(actionname.equals("UserAction")&&methodname.equalsIgnoreCase("login")){
+			return Invocation.invoke();
+		}else if(actionname.equals("UserAction")&&methodname.equalsIgnoreCase("ajaxCode")){
 			return Invocation.invoke();
 		}else{
 			return null;
 		}
-		
 	}
 }

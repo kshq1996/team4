@@ -2,6 +2,9 @@ package admin.com.oracle.amuz.model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class BaseDaoImp implements BaseDao {
@@ -16,6 +19,16 @@ public class BaseDaoImp implements BaseDao {
 			e.printStackTrace();
 		}
 		return connection;
+	}
+	
+	
+	public void disposeResource(Connection c,PreparedStatement pre,ResultSet rs) throws SQLException{
+		if(rs!=null)
+			rs.close();
+		if(pre!=null)
+			pre.close();
+		if(c!=null)
+			c.close();
 	}
 
 	@Override
