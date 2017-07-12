@@ -12,7 +12,7 @@
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
 	<x>0</x>
-	<y>0</y>
+	<y>88</y>
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -24,7 +24,7 @@
 		<b>255</b>
 	</color>
 	<font_name>Microsoft YaHei UI</font_name>
-	<font_size>9</font_size>
+	<font_size>12</font_size>
 	<settings>
 		<database>Oracle</database>
 		<capital>true</capital>
@@ -39,8 +39,8 @@
 		<use_bezier_curve>false</use_bezier_curve>
 		<suspend_validator>false</suspend_validator>
 		<export_setting>
-			<category_name_to_export></category_name_to_export>
-			<ddl_output></ddl_output>
+			<category_name_to_export>All</category_name_to_export>
+			<ddl_output>C:\Users\37409\git\team4\AMUZ\WebContent\WEB-INF\后台系统权限管理.sql</ddl_output>
 			<excel_output></excel_output>
 			<excel_template></excel_template>
 			<image_output></image_output>
@@ -100,7 +100,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2017-06-12 19:30:24</creation_date>
-			<updated_date>2017-06-25 13:06:36</updated_date>
+			<updated_date>2017-07-12 09:48:10</updated_date>
 			<model_property>
 				<name>Project Name</name>
 				<value></value>
@@ -147,7 +147,7 @@
 		</word>
 		<word>
 			<id>1</id>
-			<length>null</length>
+			<length>10</length>
 			<decimal>null</decimal>
 			<array>false</array>
 			<array_dimension>null</array_dimension>
@@ -156,7 +156,7 @@
 			<description></description>
 			<logical_name>角色名</logical_name>
 			<physical_name>actorname</physical_name>
-			<type></type>
+			<type>tinytext</type>
 		</word>
 		<word>
 			<id>2</id>
@@ -199,6 +199,58 @@
 		</word>
 		<word>
 			<id>5</id>
+			<length>30</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<args></args>
+			<description></description>
+			<logical_name>邮箱</logical_name>
+			<physical_name>email</physical_name>
+			<type>tinytext</type>
+		</word>
+		<word>
+			<id>6</id>
+			<length>15</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<args></args>
+			<description></description>
+			<logical_name>上次登录IP</logical_name>
+			<physical_name>loginedIP</physical_name>
+			<type>tinytext</type>
+		</word>
+		<word>
+			<id>7</id>
+			<length>null</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<args></args>
+			<description></description>
+			<logical_name>登陆次数</logical_name>
+			<physical_name>loginednum</physical_name>
+			<type>numeric</type>
+		</word>
+		<word>
+			<id>8</id>
+			<length>null</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<args></args>
+			<description></description>
+			<logical_name>上次登录时间</logical_name>
+			<physical_name>loginedtime</physical_name>
+			<type>date</type>
+		</word>
+		<word>
+			<id>9</id>
 			<length>50</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -211,7 +263,20 @@
 			<type>nvarchar(n)</type>
 		</word>
 		<word>
-			<id>6</id>
+			<id>10</id>
+			<length>200</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<args></args>
+			<description></description>
+			<logical_name>备注</logical_name>
+			<physical_name>other</physical_name>
+			<type>tinytext</type>
+		</word>
+		<word>
+			<id>11</id>
 			<length>20</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -224,7 +289,33 @@
 			<type>tinytext</type>
 		</word>
 		<word>
-			<id>7</id>
+			<id>12</id>
+			<length>null</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<args></args>
+			<description></description>
+			<logical_name>电话号码</logical_name>
+			<physical_name>phonenum</physical_name>
+			<type>numeric</type>
+		</word>
+		<word>
+			<id>13</id>
+			<length>null</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<args></args>
+			<description></description>
+			<logical_name>性别</logical_name>
+			<physical_name>sex</physical_name>
+			<type>numeric</type>
+		</word>
+		<word>
+			<id>14</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -237,7 +328,7 @@
 			<type>numeric</type>
 		</word>
 		<word>
-			<id>8</id>
+			<id>15</id>
 			<length>20</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -256,11 +347,11 @@
 		<table>
 			<id>0</id>
 			<height>91</height>
-			<width>262</width>
+			<width>265</width>
 				<font_name>Microsoft YaHei UI</font_name>
 				<font_size>9</font_size>
-			<x>239</x>
-			<y>361</y>
+			<x>416</x>
+			<y>482</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -288,7 +379,7 @@
 					<foreign_key>false</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>true</primary_key>
-					<unique_key>true</unique_key>
+					<unique_key>false</unique_key>
 					<sequence>
 						<name></name>
 						<schema></schema>
@@ -308,7 +399,7 @@
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
-					<type></type>
+					<type>tinytext</type>
 					<constraint></constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
@@ -338,12 +429,12 @@
 		</table>
 		<table>
 			<id>1</id>
-			<height>114</height>
-			<width>296</width>
-				<font_name>Microsoft YaHei UI</font_name>
-				<font_size>9</font_size>
-			<x>20</x>
-			<y>150</y>
+			<height>275</height>
+			<width>322</width>
+				<font_name>Consolas</font_name>
+				<font_size>10</font_size>
+			<x>43</x>
+			<y>128</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -375,7 +466,7 @@
 			<primary_key_name></primary_key_name>
 			<columns>
 				<normal_column>
-					<word_id>7</word_id>
+					<word_id>14</word_id>
 					<id>2</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -388,7 +479,7 @@
 					<foreign_key>false</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>true</primary_key>
-					<unique_key>true</unique_key>
+					<unique_key>false</unique_key>
 					<sequence>
 						<name></name>
 						<schema></schema>
@@ -402,7 +493,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>8</word_id>
+					<word_id>15</word_id>
 					<id>3</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -429,7 +520,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>6</word_id>
+					<word_id>11</word_id>
 					<id>4</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -483,6 +574,195 @@
 						<description></description>
 					</sequence>
 				</normal_column>
+				<normal_column>
+					<word_id>12</word_id>
+					<id>6</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>numeric</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<description></description>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>13</word_id>
+					<id>7</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>numeric</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<description></description>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>5</word_id>
+					<id>8</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>tinytext</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<description></description>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>10</word_id>
+					<id>9</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>tinytext</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>false</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<description></description>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>7</word_id>
+					<id>10</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>numeric</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<description></description>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>6</word_id>
+					<id>11</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>tinytext</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<description></description>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>8</word_id>
+					<id>12</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>date</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<description></description>
+					</sequence>
+				</normal_column>
 			</columns>
 			<indexes>
 			</indexes>
@@ -497,8 +777,8 @@
 			<width>279</width>
 				<font_name>Microsoft YaHei UI</font_name>
 				<font_size>9</font_size>
-			<x>385</x>
-			<y>52</y>
+			<x>457</x>
+			<y>36</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -547,7 +827,7 @@
 			<primary_key_name></primary_key_name>
 			<columns>
 				<normal_column>
-					<id>6</id>
+					<id>13</id>
 					<referenced_column>2</referenced_column>
 					<relation>1</relation>
 					<description></description>
@@ -561,7 +841,7 @@
 					<foreign_key>true</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>false</primary_key>
-					<unique_key>true</unique_key>
+					<unique_key>false</unique_key>
 					<sequence>
 						<name></name>
 						<schema></schema>
@@ -575,8 +855,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>7</id>
-					<referenced_column>8</referenced_column>
+					<id>14</id>
+					<referenced_column>15</referenced_column>
 					<relation>2</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -589,7 +869,7 @@
 					<foreign_key>true</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>false</primary_key>
-					<unique_key>true</unique_key>
+					<unique_key>false</unique_key>
 					<sequence>
 						<name></name>
 						<schema></schema>
@@ -616,8 +896,8 @@
 			<width>364</width>
 				<font_name>Microsoft YaHei UI</font_name>
 				<font_size>9</font_size>
-			<x>626</x>
-			<y>228</y>
+			<x>569</x>
+			<y>191</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -655,7 +935,7 @@
 			<columns>
 				<normal_column>
 					<word_id>2</word_id>
-					<id>8</id>
+					<id>15</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -667,7 +947,7 @@
 					<foreign_key>false</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>true</primary_key>
-					<unique_key>true</unique_key>
+					<unique_key>false</unique_key>
 					<sequence>
 						<name></name>
 						<schema></schema>
@@ -682,7 +962,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>4</word_id>
-					<id>9</id>
+					<id>16</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -709,7 +989,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>3</word_id>
-					<id>10</id>
+					<id>17</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -735,8 +1015,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>5</word_id>
-					<id>11</id>
+					<word_id>9</word_id>
+					<id>18</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -762,13 +1042,13 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>12</id>
-					<referenced_column>8</referenced_column>
+					<id>19</id>
+					<referenced_column>15</referenced_column>
 					<relation>3</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
+					<logical_name>父权限Id</logical_name>
+					<physical_name>authority_parents_id</physical_name>
 					<type>numeric</type>
 					<constraint></constraint>
 					<default_value></default_value>
@@ -776,7 +1056,7 @@
 					<foreign_key>true</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>false</primary_key>
-					<unique_key>true</unique_key>
+					<unique_key>false</unique_key>
 					<sequence>
 						<name></name>
 						<schema></schema>
