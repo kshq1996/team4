@@ -2,6 +2,8 @@ package admin.com.oracle.amuz.control.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.oracle.amuz.control.servlet.CodeServlet;
@@ -21,6 +24,7 @@ import admin.com.oracle.amuz.model.javabean.User;
 
 public class UserAction extends ActionSupport implements ModelDriven<User> {
 	private User user= new User();
+	private List<String> serverinfo;
 
 	/*
 	 * ajax验证码
@@ -51,12 +55,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	 */
 	public String login(){
 		UserDaoImp dao=new UserDaoImp();
-		System.out.println(user.getUsername());
-		System.out.println(user.getPassword());
 		User $user=dao.login(user.getUsername(), user.getPassword());
-		System.out.println($user);
 		HttpSession session =ServletActionContext.getRequest().getSession();
+		
 		if($user!=null){
+			//登录成功！，获取ip等信息，存入数据库
 			boolean b=dao.updateLoginedHistory($user.getUserid(), $user.getLoginednum());
 			System.out.println(b==true?$user.getUsername()+"已更新成功登录信息":$user.getUsername()+"更新登录信息失败");
 			session.setAttribute("loginedUser",$user);
@@ -64,6 +67,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		}else{
 			return "LoginFail";
 		}
+		ActionContext.getContext().getValueStack().set("asd",);
 	}
 	
 	@Override
