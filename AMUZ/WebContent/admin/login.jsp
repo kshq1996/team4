@@ -89,7 +89,7 @@
                 	 
                  }else{
                 	 document.getElementById('codeResult').innerHTML="<b style='color:red'>验证码错误</b>"
-                 	document.getElementById('submitButton').disable="true";
+                 	 document.getElementById('submitButton').disable="true";
                 	 document.getElementById('submitButton').style="background-color:grey";
                  }
                 

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.oracle.amuz.control.servlet.CodeServlet;
 import com.oracle.amuz.model.dao.UserDAOImp;
 
+import admin.com.oracle.amuz.model.dao.AdminuserDaoImp;
 import admin.com.oracle.amuz.model.dao.UserDaoImp;
 import admin.com.oracle.amuz.model.javabean.User;
 
@@ -25,7 +27,6 @@ import admin.com.oracle.amuz.model.javabean.User;
 public class UserAction extends ActionSupport implements ModelDriven<User> {
 	private User user= new User();
 	private List<String> serverinfo;
-
 	/*
 	 * ajax验证码
 	 */
@@ -48,7 +49,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		}
 		return null;
 
-				
 	}
 	/*
 	 * 用户登陆方法
@@ -67,7 +67,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		}else{
 			return "LoginFail";
 		}
-		ActionContext.getContext().getValueStack().set("asd",);
 	}
 	
 	@Override

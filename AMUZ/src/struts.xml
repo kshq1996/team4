@@ -15,6 +15,38 @@
  			<interceptor-ref name="UserInterceptor"></interceptor-ref>
  			<result name="LoginSuccess">/admin/index.jsp</result>
  		</action>
+ 		
+ 		<action name="AdminAction_*" class="admin.com.oracle.amuz.control.action.AdminAction" method="{1}">
+ 			<interceptor-ref name="defaultStack"></interceptor-ref>
+ 			<interceptor-ref name="UserInterceptor"></interceptor-ref>
+ 			<result name="listAllUser">/admin/cache/listAllUser.jsp</result>
+ 			<result name="showActors">/admin/cache/showActors.jsp</result>
+ 			<result name="showAuthority">/admin/cache/showAuthority.jsp</result>
+ 			<result name="showAuthorityUser">/admin/cache/showAuthorityUser.jsp</result>
+ 			<result name="admin-permission-search">/admin/admin-permission-search.jsp</result>
+ 		</action>
+ 		
+ 		<action name="HelpAction_*" class="admin.com.oracle.amuz.control.action.HelpAction" method="{1}">
+ 		 	<interceptor-ref name="defaultStack"></interceptor-ref>
+ 			<interceptor-ref name="UserInterceptor"></interceptor-ref>
+ 			<result name="showActors">/admin/cache/showActors.jsp</result>
+ 			<result name="showAuthorityToAdd">/admin/cache/showAuthorityToAdd.jsp</result>
+ 		</action>
  	</package>
- 	<constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+ 	
+<!-- AJAX 
+    1.引入Jar包
+    2.所在包必须要继承自JSON-default
+    3.resultType是JSON
+    4.附加了一个参数excludeNullProperties，目的是不序列化Action里为null的字段。
+    5.<result>元素没有name属性，也没有跳转值 
+    -->
+ 	<package name="ajax" extends="json-default">
+        <action name="AdminAction" class="admin.com.oracle.amuz.control.action.AdminAction" method="addAdmin">
+            <result type="json">  
+                <param name="excludeNullProperties">true</param>  
+                <param name="root">result</param>
+            </result> 
+         </action>     
+    </package>  
  </struts>

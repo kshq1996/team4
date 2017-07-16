@@ -9,12 +9,20 @@ public class User implements Serializable{
 	private String password;
 	private String actor;
 	private Set<Authority> authority;
-	private int phonenum;
+	private String phonenum;
 	private String email;
 	private String sex;
 	private int loginednum;
 	private String loginedIP;
 	private String loginedtime;
+	private int status=1;
+	
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	
 	public int getUserid() {
 		return userid;
@@ -46,10 +54,10 @@ public class User implements Serializable{
 	public void setAuthority(Set<Authority> authority) {
 		this.authority = authority;
 	}
-	public int getPhonenum() {
+	public String getPhonenum() {
 		return phonenum;
 	}
-	public void setPhonenum(int phonenum) {
+	public void setPhonenum(String phonenum) {
 		this.phonenum = phonenum;
 	}
 	public String getEmail() {
@@ -89,8 +97,11 @@ public class User implements Serializable{
 		this.other = other;
 	}
 	private String other;
-	public User(int userid, String username, String password, String actor, Set<Authority> authority, int phonenum,
-			String email, String sex, int loginednum, String loginedIP, String loginedtime, String other) {
+
+	
+	
+	public User(int userid, String username, String password, String actor, Set<Authority> authority, String phonenum,
+			String email, String sex, int loginednum, String loginedIP, String loginedtime, int status, String other) {
 		super();
 		this.userid = userid;
 		this.username = username;
@@ -103,6 +114,7 @@ public class User implements Serializable{
 		this.loginednum = loginednum;
 		this.loginedIP = loginedIP;
 		this.loginedtime = loginedtime;
+		this.status = status;
 		this.other = other;
 	}
 	public User() {
@@ -113,8 +125,9 @@ public class User implements Serializable{
 		return "User [userid=" + userid + ", username=" + username + ", password=" + password + ", actor=" + actor
 				+ ", authority=" + authority + ", phonenum=" + phonenum + ", email=" + email + ", sex=" + sex
 				+ ", loginednum=" + loginednum + ", loginedIP=" + loginedIP + ", loginedtime=" + loginedtime
-				+ ", other=" + other + "]";
+				+ ", status=" + status + ", other=" + other + "]";
 	}
+	
 	
 	
 	

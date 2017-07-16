@@ -35,9 +35,9 @@ public class UserDaoImp extends BaseDaoImp implements UserDao {
 				user.setUsername(username);
 				user.setPassword(password);
 				user.setEmail(rs.getString("email"));
-				user.setPhonenum(rs.getInt("phonenum"));
+				user.setPhonenum(rs.getString("phonenum"));
 				user.setSex(rs.getInt("sex") == 0 ? "男" : "女");
-				user.setOther(rs.getString("other"));
+				user.setOther(rs.getString("otherss"));
 				user.setLoginedIP(rs.getString("loginedIP"));
 				user.setLoginednum(rs.getInt("loginednum"));
 				user.setLoginedtime(rs.getString("loginedtime"));
